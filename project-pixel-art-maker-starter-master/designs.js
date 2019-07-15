@@ -25,8 +25,8 @@ for (var m = 0; m < height; m++) {
         var cell = row.insertCell(n);
         cell.addEventListener('click', function(event) {
             // color when a cell is clicked
-            cell.style.backgroundColor = color.value;
+            event.target.style.backgroundColor = color.value;
         })
-      }
+      };
     }
 }
