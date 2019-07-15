@@ -13,20 +13,20 @@ sizePicker.addEventListener("submit", function(event) {
 // When size is submitted by the user, call makeGrid()
 
 function makeGrid() {
+
 var height = document.getElementById("inputHeight").value;
 var width = document.getElementById("inputWidth").value;
 canvas.innerHTML = null;
-
-canvas.addEventListener('click', function(event) {
-// color when a cell is clicked
-event.target.style.backgroundColor = color.value;
-
+    
 //loop over each row    
 for (var m = 0; m < height; m++) {
     var row = canvas.insertRow(m);
     for (var n = 0; n < width; n++) {
-        var column = row.insertCell(n);             
-        }
+        var cell = row.insertCell(n);
+        cell.addEventListener('click', function(event) {
+            // color when a cell is clicked
+            cell.style.backgroundColor = color.value;
+        })
+      }
     }
-});
 }
